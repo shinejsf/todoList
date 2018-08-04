@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todoList';
+  title = 'toDo';
+  todoList: any = [];
+  itemObj: any = {};
+  todoItem: string;
+  addTodo(){
+    if(this.todoItem.trim().length){
+      this.itemObj = {
+        value: this.todoItem,
+        checked: false
+      };
+      this.todoList.push(this.itemObj);
+      this.todoItem= null;
+    }
+  }
 }
